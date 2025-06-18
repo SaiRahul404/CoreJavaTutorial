@@ -7,6 +7,10 @@ public class CarFactory {
     void printCarDetails() {
         System.out.println("The color of car is " + carColor + " max Speed is " + maxSpeed);
     }
+
+//    CarFactory() {
+//
+//    }
 }
 
 class CarFactoryMain {
