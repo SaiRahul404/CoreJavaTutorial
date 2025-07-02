@@ -2,13 +2,17 @@ package org.example;
 
 public class StartApp {
     public static void main(String[] args) {
-        Grip g1 = new Grip(2,4);
+        Grip g1 = new Grip(2, 4);
         g1.print();
     }
 }
 
-class Core {
+class Core { // Parent class
     int val;
+
+    void print() {
+        System.out.println(this.val);
+    }
 }
 
 class Grip extends Core {
@@ -21,7 +25,7 @@ class Grip extends Core {
 
     void print() {
         System.out.println("Core val: " + super.val);
-        System.out.println("Grip val: " + val);
+        System.out.println("Grip val: " + this.val);
     }
 
 }

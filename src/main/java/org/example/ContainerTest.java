@@ -3,7 +3,9 @@ package org.example;
 public class ContainerTest {
     // The first calls the superclass  constructor
     public static void main(String[] args) {
-        SmallContainer s1 = new SmallContainer(10);
+        Container c1; // reference of super class
+        c1 = new SmallContainer(10); // object of the subclass
+        //SmallContainer s1 = new SmallContainer(10);
     }
 
 }
