@@ -9,6 +9,8 @@ public class OfficePrinterDemo {
         Printer p1;
         p1 = new ColorPrinter();
         p1.printDocument("Hey");
+        p1.print("Hey",5);
+        p1.print(5, "Hey");
     }
 }
 
