@@ -44,16 +44,22 @@ public class StudentGradeCalculator {
             double averageGrade = sumOfGrades / numberOfSubjects;
 
             char letterGrade;
-            if (averageGrade >= 90) {
-                letterGrade = 'A';
-            } else if (averageGrade >= 80) {
-                letterGrade = 'B';
-            } else if (averageGrade >= 70) {
-                letterGrade = 'C';
-            } else if (averageGrade >= 60) {
-                letterGrade = 'D';
-            } else {
-                letterGrade = 'F';
+            switch ((int) Math.floor(averageGrade / 10)) {
+                case 10:
+                case 9:
+                    letterGrade = 'A';
+                    break;
+                case 8:
+                    letterGrade = 'B';
+                    break;
+                case 7:
+                    letterGrade = 'C';
+                    break;
+                case 6:
+                    letterGrade = 'D';
+                    break;
+                default:
+                    letterGrade = 'F';
             }
             System.out.println("\n--- Results for " + studentName + " ---");
             System.out.println("Subject Grades:");
@@ -64,13 +70,16 @@ public class StudentGradeCalculator {
             System.out.println("Letter Grade: " + letterGrade);
 
 
-
         }
         input.close();
         System.out.println("\n--- Grade calculation complete. ---");
 
 
     }
+    // Math.floor(95.8)    // ➜ 95
+    //Math.floor(90.0)    // ➜ 90
+    //Math.floor(89.9)    // ➜ 89
+    //Math.floor(60.3)    // ➜ 60
     // Display Highest and Lowest Grade per Student:
 
 }
