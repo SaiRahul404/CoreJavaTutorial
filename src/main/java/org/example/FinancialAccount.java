@@ -63,3 +63,50 @@ class FixedDepositAccount extends FinancialAccount {
 //Class B  → Child of A
 //   ↓
 //Class C  → Child of B (inherits from both A and B)
+
+// Multiple Inheritance
+// One class inherits from two or more parent classes.
+// Imagine someone trying to inherit traits from two fathers — confusing and unnatural, right?
+// Java Does Not Support Multiple Inheritance with Classes
+
+
+// The primary reason Java doesn't allow multiple inheritance of classes is to avoid the "Diamond Problem".
+
+//      Class A
+//      /    \
+//  Class B   Class C
+//      \    /
+//      Class D
+
+class A {
+    void doSomething() {
+        System.out.println("Something");
+    }
+}
+
+class B extends A {
+
+    @Override
+    void doSomething() {
+        System.out.println("Something New in B");
+    }
+
+}
+
+class C extends A {
+    @Override
+    void doSomething() {
+        System.out.println("Something New in C");
+    }
+}
+
+//class D extends C,B {
+//
+//}
+// If you create an object of Class D and call d.doSomething(), which version of doSomething() should be executed?
+// Should it be B's version (which inherited from A and then customized)?
+//Or C's version (which also inherited from A and then customized)?
+// The compiler wouldn't know which path to choose, leading to ambiguity.
+// For this reason java avoids Multiple inheritance in classes
+// The solution for this is interfaces
+
